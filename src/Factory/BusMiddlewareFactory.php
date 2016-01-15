@@ -1,7 +1,6 @@
 <?php
 namespace Da\Bus\Factory;
 
-
 use Da\Bus\Bus;
 use Da\Bus\Middleware\HandlerMiddleware;
 use Da\Bus\Middleware\LockingMiddleware;
@@ -12,7 +11,7 @@ use Da\Resolver\ClassNameResolver;
 class BusMiddlewareFactory
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function create(array $messageToCommandMap)
     {

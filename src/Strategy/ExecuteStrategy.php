@@ -3,7 +3,7 @@ namespace Da\Bus\Strategy;
 
 use Da\Bus\Command\Message;
 use Da\Bus\Service\CommandLocatorService;
-use Da\Resolver\MessageNameResolver;
+use Da\Resolver\NameResolver;
 
 class ExecuteStrategy implements Strategy
 {
@@ -12,20 +12,20 @@ class ExecuteStrategy implements Strategy
      */
     private $commandLocator;
     /**
-     * @var MessageNameResolver
+     * @var NameResolver
      */
-    private $messageNameResolver;
+    private $nameResolver;
 
     /**
      * ExecuteStrategy constructor.
      *
      * @param CommandLocatorService $commandLocator
-     * @param MessageNameResolver $messageNameResolver
+     * @param NameResolver $nameResolver
      */
-    public function __construct(CommandLocatorService $commandLocator, MessageNameResolver $messageNameResolver)
+    public function __construct(CommandLocatorService $commandLocator, NameResolver $nameResolver)
     {
         $this->commandLocator = $commandLocator;
-        $this->messageNameResolver = $messageNameResolver;
+        $this->nameResolver = $nameResolver;
     }
 
     /**
@@ -33,7 +33,7 @@ class ExecuteStrategy implements Strategy
      */
     public function run(Message $message)
     {
-        $messageName = $this->messageNameResolver->resolve($message);
+        $messageName = $this->nameResolver->resolve($message);
         $command = $this->commandLocator->getCommand($messageName);
         $command->execute($message);
     }

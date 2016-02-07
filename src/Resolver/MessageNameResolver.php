@@ -3,12 +3,13 @@ namespace Da\Resolver;
 
 use Da\Bus\Command\Message;
 
-interface MessageNameResolver
+class MessageNameResolver implements NameResolver
 {
     /**
-     * @param Message $message
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    public function resolve(Message $message);
+    public function resolve(Message $message)
+    {
+        return $message->getName();
+    }
 }

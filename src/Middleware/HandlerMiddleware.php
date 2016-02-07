@@ -3,7 +3,7 @@ namespace Da\Bus\Middleware;
 
 use Da\Bus\Command\Message;
 use Da\Bus\Service\CommandLocatorService;
-use Da\Resolver\MessageNameResolver;
+use Da\Resolver\NameResolver;
 
 class HandlerMiddleware implements Middleware
 {
@@ -12,20 +12,20 @@ class HandlerMiddleware implements Middleware
      */
     private $commandLocator;
     /**
-     * @var MessageNameResolver
+     * @var NameResolver
      */
-    private $messageNameResolver;
+    private $nameResolver;
 
     /**
      * HandlerMiddleware constructor.
      *
      * @param CommandLocatorService $commandLocator
-     * @param MessageNameResolver $messageNameResolver
+     * @param NameResolver $nameResolver
      */
-    public function __construct(CommandLocatorService $commandLocator, MessageNameResolver $messageNameResolver)
+    public function __construct(CommandLocatorService $commandLocator, NameResolver $nameResolver)
     {
         $this->commandLocator = $commandLocator;
-        $this->messageNameResolver = $messageNameResolver;
+        $this->nameResolver = $nameResolver;
     }
 
     /**
@@ -34,7 +34,7 @@ class HandlerMiddleware implements Middleware
      */
     public function handle(Message $message, callable $next)
     {
-        $messageName = $this->messageNameResolver->resolve($message);
+        $messageName = $this->nameResolver->resolve($message);
         $command = $this->commandLocator->getCommand($messageName);
         $command->execute($message);
         $next($message);

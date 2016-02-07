@@ -3,7 +3,7 @@ namespace Da\Resolver;
 
 use Da\Bus\Command\Message;
 
-class ClassNameResolver implements MessageNameResolver
+class ClassNameResolver implements NameResolver
 {
     /**
      * {@inheritdoc}

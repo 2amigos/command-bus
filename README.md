@@ -1,5 +1,7 @@
 # Bus
 
+NOTE: This library still under development (tests are not yet included). Use it at your own risk.
+
  A very simple Command Bus to plug into your project. This library differs from other similar libraries like 
  [Tactician](http://tactician.thephpleague.com/) and [SimpleBus](http://simplebus.github.io/MessageBus/doc/command_bus.html) 
  not on its purpose but on the approach taken. 

@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus\Service;
 
 use Da\Bus\Command\Command;

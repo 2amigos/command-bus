@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus\Middleware;
 
 use Da\Bus\Command\Message;
@@ -20,7 +21,7 @@ class HandlerMiddleware implements Middleware
      * HandlerMiddleware constructor.
      *
      * @param CommandLocatorService $commandLocator
-     * @param NameResolver $nameResolver
+     * @param NameResolver          $nameResolver
      */
     public function __construct(CommandLocatorService $commandLocator, NameResolver $nameResolver)
     {
@@ -29,7 +30,7 @@ class HandlerMiddleware implements Middleware
     }
 
     /**
-     * @param Message $message
+     * @param Message  $message
      * @param callable $next
      */
     public function handle(Message $message, callable $next)

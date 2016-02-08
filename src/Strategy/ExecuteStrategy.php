@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus\Strategy;
 
 use Da\Bus\Command\Message;
@@ -20,7 +21,7 @@ class ExecuteStrategy implements Strategy
      * ExecuteStrategy constructor.
      *
      * @param CommandLocatorService $commandLocator
-     * @param NameResolver $nameResolver
+     * @param NameResolver          $nameResolver
      */
     public function __construct(CommandLocatorService $commandLocator, NameResolver $nameResolver)
     {

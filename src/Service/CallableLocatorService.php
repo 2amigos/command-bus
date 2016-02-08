@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus\Service;
 
 use Da\Bus\Command\Command;
@@ -41,7 +42,7 @@ class CallableLocatorService implements CommandLocatorService
     public function getCommand($messageName)
     {
         if (!$this->hasCommand($messageName)) {
-            throw new UnknownMessageNameException('Unknown message name: ' . $messageName);
+            throw new UnknownMessageNameException('Unknown message name: '.$messageName);
         }
 
         return call_user_func($this->callable, $messageName);

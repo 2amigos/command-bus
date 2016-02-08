@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus\Factory;
 
 use Da\Bus\Bus;

@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus\Middleware;
 
 use Da\Bus\Command\Message;
@@ -19,7 +20,7 @@ class LoggingMiddleware implements Middleware
      * LoggingMiddleware constructor.
      *
      * @param LoggerInterface $logger
-     * @param string $level
+     * @param string          $level
      */
     public function __construct(LoggerInterface $logger, $level)
     {
@@ -28,7 +29,7 @@ class LoggingMiddleware implements Middleware
     }
 
     /**
-     * @param Message $message
+     * @param Message  $message
      * @param callable $next
      */
     public function handle(Message $message, callable $next)

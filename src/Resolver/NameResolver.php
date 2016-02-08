@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Resolver;
 
 use Da\Bus\Command\Message;

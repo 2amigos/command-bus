@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus\Service;
 
 use Da\Bus\Command\Command;
@@ -54,7 +55,7 @@ class InMemoryLocatorService implements CommandLocatorService
     public function getCommand($messageName)
     {
         if (!$this->hasCommand($messageName)) {
-            throw new UnknownMessageNameException('Unknown message name: ' . $messageName);
+            throw new UnknownMessageNameException('Unknown message name: '.$messageName);
         }
 
         return $this->getCommandInstance($messageName);

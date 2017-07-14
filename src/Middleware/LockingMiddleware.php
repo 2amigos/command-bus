@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus\Middleware;
 
 use Da\Bus\Command\Message;
@@ -16,7 +17,7 @@ class LockingMiddleware implements Middleware
     private $isHandling = false;
 
     /**
-     * @param Message $message
+     * @param Message  $message
      * @param callable $next
      *
      * @throws Exception

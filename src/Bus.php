@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus;
 
 use Da\Bus\Command\Message;

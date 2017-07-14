@@ -1,4 +1,5 @@
 <?php
+
 namespace Da\Bus\Exception;
 
 use Exception;

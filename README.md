@@ -59,6 +59,10 @@ We have added a PHP code fixer to standardize our code. It includes Symfony, PSR
 
 ## Testing
 
- - TODO
+ ```bash
+ $ ./vendor/bin/phpunit
+ ```
 
-[![2amigOS!](https://s.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0?s=80)](http://www.2amigos.us) 
+> [![2amigOS!](https://s.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0?s=80)](http://www.2amigos.us)
+<i>Custom Software | Web & Mobile Software Development</i>  
+[www.2amigos.us](http://www.2amigos.us)
